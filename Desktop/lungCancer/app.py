@@ -1,11 +1,14 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import os
 
 app = Flask(__name__)
 
-model = pickle.load(open("model/knn_model.pkl", "rb"))
-scaler = pickle.load(open("model/scaler.pkl", "rb"))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = pickle.load(open(os.path.join(BASE_DIR, "model", "knn_model.pkl"), "rb"))
+scaler = pickle.load(open(os.path.join(BASE_DIR, "model", "scaler.pkl"), "rb"))
 
 @app.route('/')
 def home():
@@ -35,10 +38,9 @@ def predict():
     values = scaler.transform(values)
 
     result = model.predict(values)
-
     output = "Lung Cancer Detected 😟" if result[0] == 1 else "No Lung Cancer 😊"
 
     return render_template("result.html", prediction=output)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
-
