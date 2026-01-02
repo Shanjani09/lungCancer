@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="hero">
+    <div class="card">
+        <h1>Lung Cancer Prediction System</h1>
+        <p class="subtitle">
+            An AI-powered system to predict lung cancer risk using patient health indicators.
+        </p>
+
+        <form action="/predict" method="post" class="form-grid">
+
+            <input type="number" name="gender" placeholder="Gender (0 = Female, 1 = Male)" required>
+            <input type="number" name="age" placeholder="Age" required>
+
+            <input type="number" name="smoking" placeholder="Smoking (0 / 1)" required>
+            <input type="number" name="yellow_fingers" placeholder="Yellow Fingers (0 / 1)" required>
+
+            <input type="number" name="anxiety" placeholder="Anxiety (0 / 1)" required>
+            <input type="number" name="peer_pressure" placeholder="Peer Pressure (0 / 1)" required>
+
+            <input type="number" name="chronic_disease" placeholder="Chronic Disease (0 / 1)" required>
+            <input type="number" name="fatigue" placeholder="Fatigue (0 / 1)" required>
+
+            <input type="number" name="allergy" placeholder="Allergy (0 / 1)" required>
+            <input type="number" name="wheezing" placeholder="Wheezing (0 / 1)" required>
+
+            <input type="number" name="alcohol" placeholder="Alcohol Consumption (0 / 1)" required>
+            <input type="number" name="coughing" placeholder="Coughing (0 / 1)" required>
+
+            <input type="number" name="shortness_breath" placeholder="Shortness of Breath (0 / 1)" required>
+            <input type="number" name="swallowing" placeholder="Swallowing Difficulty (0 / 1)" required>
+
+            <input type="number" name="chest_pain" placeholder="Chest Pain (0 / 1)" required>
+
+            <button type="submit">Predict Now</button>
+        </form>
+
+        <p class="footer-text">
+            ⚠ This tool is for educational purposes only.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
